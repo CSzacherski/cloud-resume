@@ -1,2 +1,2 @@
 Hello, Im Cezary.
-Here I am creating ma cloud resume
+Here I am creating my cloud resume
