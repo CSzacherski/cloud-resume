@@ -1,4 +1,4 @@
-startGreeting();
+//startGreeting();
 
 async function startGreeting() {
     const greetingHeading = document.getElementById("helloHeadingText");
