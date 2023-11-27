@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "CloudResume.FunctionApp": {
+    "CloudResumeFunctionApp": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7194",
+      "commandLineArgs": "--port 7079",
       "launchBrowser": false
     }
   }
