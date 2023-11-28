@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.FunctionApp", "CloudResume.FunctionApp\CloudResume.FunctionApp.csproj", "{B9B924C5-64E5-4E4A-8DCD-D36BF5CF9DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.Domain", "CloudResume.Domain\CloudResume.Domain.csproj", "{4141F64D-AE93-4E35-9434-C152ED701569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.Infrastructure", "CloudResume.Infrastructure\CloudResume.Infrastructure.csproj", "{E7366505-DAD5-46CF-906E-A49D276C3B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudResume.Application", "CloudResume.Application\CloudResume.Application.csproj", "{0724DD2A-07D9-4675-B2DE-F4698BD74E69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9B924C5-64E5-4E4A-8DCD-D36BF5CF9DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B924C5-64E5-4E4A-8DCD-D36BF5CF9DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B924C5-64E5-4E4A-8DCD-D36BF5CF9DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B924C5-64E5-4E4A-8DCD-D36BF5CF9DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4141F64D-AE93-4E35-9434-C152ED701569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4141F64D-AE93-4E35-9434-C152ED701569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4141F64D-AE93-4E35-9434-C152ED701569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4141F64D-AE93-4E35-9434-C152ED701569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7366505-DAD5-46CF-906E-A49D276C3B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7366505-DAD5-46CF-906E-A49D276C3B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7366505-DAD5-46CF-906E-A49D276C3B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7366505-DAD5-46CF-906E-A49D276C3B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0724DD2A-07D9-4675-B2DE-F4698BD74E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0724DD2A-07D9-4675-B2DE-F4698BD74E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0724DD2A-07D9-4675-B2DE-F4698BD74E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0724DD2A-07D9-4675-B2DE-F4698BD74E69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
