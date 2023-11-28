@@ -1,3 +1,13 @@
-﻿namespace CloudResume.Domain.Visitors;
+﻿using Azure;
+using Azure.Data.Tables;
 
-public sealed record Visitor(Guid Id);
+namespace CloudResume.Domain.Visitors;
+
+public sealed record Visitor : ITableEntity
+{
+    public string RowKey { get; set; } = default!;
+    public string PartitionKey { get; set; } = default!;
+    public ETag ETag { get; set; } = default!;
+    public DateTimeOffset? Timestamp { get; set; } = default!;
+    public int Count { get; init; }
+}

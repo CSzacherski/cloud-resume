@@ -2,5 +2,5 @@
 
 public interface IVisitorsRepository
 {
-    public Task<IEnumerable<Visitor>> GetAllVisitors();
+    public Task<int> GetVisitorsCount();
 }

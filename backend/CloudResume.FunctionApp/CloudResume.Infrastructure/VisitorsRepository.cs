@@ -1,12 +1,17 @@
-﻿using CloudResume.Domain.Visitors;
+﻿using Azure.Data.Tables;
+using CloudResume.Domain.Visitors;
 
 namespace CloudResume.Infrastructure;
 
 public class VisitorsRepository : IVisitorsRepository
 {
-    public Task<IEnumerable<Visitor>> GetAllVisitors()
+    public async Task<int> GetVisitorsCount()
     {
-        var visitor = new Visitor(Guid.NewGuid());
-        return Task.FromResult(new[] { visitor }.AsEnumerable());
+        var tableServiceClient = new TableServiceClient(Environment.GetEnvironmentVariable("COSMOS_CONNECTION_STRING"));
+        var tableClient = tableServiceClient.GetTableClient(
+            tableName: "Visitors"
+        );
+        var visitorsCount = await tableClient.GetEntityIfExistsAsync<Visitor>("count", "count");
+        return visitorsCount?.Value?.Count ?? 0;
     }
 }

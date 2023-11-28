@@ -11,8 +11,8 @@ public class VisitorsService : IVisitorsService
         _visitorsRepository = visitorsRepository;
     }
 
-    public Task<IEnumerable<Visitor>> GetAllVisitors()
+    public Task<int> GetVisitorsCount()
     {
-        return _visitorsRepository.GetAllVisitors();
+        return _visitorsRepository.GetVisitorsCount();
     }
 }

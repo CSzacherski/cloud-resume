@@ -22,7 +22,7 @@ public class GetVisitors
     public async Task<IActionResult> RunAsync([HttpTrigger(AuthorizationLevel.Function, "get", Route = "visitors")] HttpRequest req, ILogger log)
     {
         log.LogInformation("C# HTTP trigger function processed a request.");
-        var visitors = await _visitorsService.GetAllVisitors();
-        return new OkObjectResult($"{visitors.Count()}");
+        var cnt = await _visitorsService.GetVisitorsCount();
+        return new OkObjectResult($"{cnt}");
     }
 }

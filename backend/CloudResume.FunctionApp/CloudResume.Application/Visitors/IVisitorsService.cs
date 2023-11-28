@@ -5,5 +5,5 @@ namespace CloudResume.Application.Visitors;
 
 public interface IVisitorsService
 {
-    Task<IEnumerable<Visitor>> GetAllVisitors();
+    Task<int> GetVisitorsCount();
 }
