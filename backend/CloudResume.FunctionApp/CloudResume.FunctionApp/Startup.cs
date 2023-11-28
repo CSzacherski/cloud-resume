@@ -12,6 +12,6 @@ public class Startup : FunctionsStartup
 {
     public override void Configure(IFunctionsHostBuilder builder)
     {
-        builder.Services.AddApplication().AddInfrastructure();
+        builder.Services.AddInfrastructure().AddApplication();
     }
 }
