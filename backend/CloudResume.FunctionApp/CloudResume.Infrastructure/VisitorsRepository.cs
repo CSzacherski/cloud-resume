@@ -5,13 +5,27 @@ namespace CloudResume.Infrastructure;
 
 public class VisitorsRepository : IVisitorsRepository
 {
-    public async Task<int> GetVisitorsCount()
+    private readonly TableServiceClient _tableServiceClient;
+    private readonly TableClient _visitorsTableClient;
+
+    public VisitorsRepository()
     {
-        var tableServiceClient = new TableServiceClient(Environment.GetEnvironmentVariable("COSMOS_CONNECTION_STRING"));
-        var tableClient = tableServiceClient.GetTableClient(
+        _tableServiceClient = new TableServiceClient(Environment.GetEnvironmentVariable("COSMOS_CONNECTION_STRING"));
+        _visitorsTableClient = _tableServiceClient.GetTableClient(
             tableName: "Visitors"
         );
-        var visitorsCount = await tableClient.GetEntityIfExistsAsync<Visitor>("count", "count");
-        return visitorsCount?.Value?.Count ?? 0;
+    }
+
+    public async Task<int> GetVisitorsCount()
+    {
+        var pageable = _visitorsTableClient.QueryAsync<Visitor>(x => x.PartitionKey == "visitor");
+        var list = await pageable.ToListAsync();
+        return list.Count;
+    }
+
+    public void AddVisitor()
+    {
+        var visitor = new Visitor { PartitionKey = "visitor", RowKey = Guid.NewGuid().ToString(), Timestamp = DateTimeOffset.Now };
+        _visitorsTableClient.AddEntityAsync(visitor);
     }
 }

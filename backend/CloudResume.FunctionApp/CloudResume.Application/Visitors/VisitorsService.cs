@@ -15,4 +15,9 @@ public class VisitorsService : IVisitorsService
     {
         return _visitorsRepository.GetVisitorsCount();
     }
+
+    public void AddVisitor()
+    {
+        _visitorsRepository.AddVisitor();
+    }
 }

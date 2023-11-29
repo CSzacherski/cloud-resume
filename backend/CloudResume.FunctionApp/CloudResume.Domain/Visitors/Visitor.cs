@@ -9,5 +9,4 @@ public sealed record Visitor : ITableEntity
     public string PartitionKey { get; set; } = default!;
     public ETag ETag { get; set; } = default!;
     public DateTimeOffset? Timestamp { get; set; } = default!;
-    public int Count { get; init; }
 }

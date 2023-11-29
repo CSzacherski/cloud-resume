@@ -1,9 +1,10 @@
 //startGreeting();
+getVisitors();
 
 async function startGreeting() {
     const greetingHeading = document.getElementById("helloHeadingText");
     const myNameHeading = document.getElementById("myNameIsText");
-    const friendsCallHeading = document.getElementById("friendsCallMeText");
+    
     await delayedWrite(greetingHeading, "Cześć! ... Hello! ... Hola!", 80);
     await delayedWrite(myNameHeading, "I am Cezary ... and this is my cloud resume ", 90);
 }
@@ -27,4 +28,11 @@ async function delayedWrite(element, text, delay) {
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getVisitors() {
+    const response = await fetch("https://fapp-cs-cloud-resume.azurewebsites.net/api/visitors");
+    const cnt = document.getElementById("visitorsCnt");
+    cnt.textContent = response.text;
+    console.log(response.text);
 }
