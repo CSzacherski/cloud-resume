@@ -1,10 +1,10 @@
-//startGreeting();
 getVisitors();
+addVisitors();
 
 async function startGreeting() {
     const greetingHeading = document.getElementById("helloHeadingText");
     const myNameHeading = document.getElementById("myNameIsText");
-    
+
     await delayedWrite(greetingHeading, "Cześć! ... Hello! ... Hola!", 80);
     await delayedWrite(myNameHeading, "I am Cezary ... and this is my cloud resume ", 90);
 }
@@ -31,8 +31,18 @@ function sleep(ms) {
 }
 
 async function getVisitors() {
-    const response = await fetch("https://fapp-cs-cloud-resume.azurewebsites.net/api/visitors");
+    const response = await fetch("https://api.cszacherski.pl/api/visitors", {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    });
     const cnt = document.getElementById("visitorsCnt");
-    cnt.textContent = response.text;
-    console.log(response.text);
+    response.text().then(txt => cnt.textContent = txt);
+}
+
+async function addVisitors() {
+    const response = await fetch("https://api.cszacherski.pl/api/visitors", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "no-cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    });
 }
